@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miika Berg - Hardware Engineer → AI & Automation</title>
+    <meta name="description" content="Senior Design Engineer @ Teleste | DOCSIS 4.0 pioneer | AI-driven innovation | Chairman @ Otso3 | MEng & MBA student focused on sustainable future and innovation expertise.">
+    <meta name="keywords" content="RF Engineering, DOCSIS 4.0, Electronics Design, AI Innovation, Sustainability, Teleste, Turku, Finland">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Miika Berg - Senior Design Engineer | Innovation × Sustainability × AI">
+    <meta property="og:description" content="20+ years in RF engineering. DOCSIS 4.0 pioneer. Building sustainable future through technology and innovation.">
+    <meta property="og:image" content="profile.jpg">
+    <meta property="og:url" content="https://miikaberg.github.io">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0e14;
+            --bg-secondary: #151920;
+            --bg-tertiary: #1f2630;
+            --text-primary: #e6e6e6;
+            --text-secondary: #a0a0a0;
+            --text-muted: #606060;
+            --accent-orange: #ff8c42;
+            --accent-blue: #4a9eff;
+            --accent-green: #6dd47e;
+            --border-color: #2a3038;
+            --grid-color: rgba(255, 140, 66, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 14, 20, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--accent-orange);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--accent-orange);
+            transition: all 0.3s;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--accent-orange);
+        }
+
+        .subtitle {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: 2px solid;
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent-orange);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+            transform: translateY(-2px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-orange);
+            filter: grayscale(20%);
+            aspect-ratio: 1/1;
+            object-fit: cover;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateX(8px);
+            border-color: var(--accent-orange);
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3rem;
+            color: var(--accent-orange);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline {
+            border-left: 2px solid var(--border-color);
+            padding-left: 3rem;
+            margin-left: 1rem;
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-orange);
+            border-radius: 50%;
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+
+        .tag:hover {
+            border-color: var(--accent-orange);
+            color: var(--accent-orange);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+        }
+
+        .skill-category h3 {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent-orange);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-orange);
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .philosophy-item {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-orange);
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .philosophy-item:hover {
+            transform: translateX(8px);
+            background: var(--bg-tertiary);
+        }
+
+        .philosophy-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .philosophy-item p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .philosophy-quote {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+            border-left: 2px solid var(--border-color);
+            padding-left: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 6rem;
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                width: 100%;
+                background: var(--bg-secondary);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transition: left 0.3s;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            nav ul.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-orange);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">MB</div>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="#home" onclick="closeMenu()">Home</a></li>
+                <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="#education" onclick="closeMenu()">Education</a></li>
+                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+                <li><a href="#philosophy" onclick="closeMenu()">Philosophy</a></li>
+                <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Senior Design Engineer<br>
+                        <span class="highlight">Innovation × Sustainability × AI</span>
+                    </h1>
+                    <div class="subtitle">Teleste | Otso3 Chairman | MEng & MBA Student</div>
+                    <p class="description">
+                        20+ vuotta RF-elektroniikkaa ja tuotekehitystä. DOCSIS 4.0 pioneeri. 
+                        Rakennan kestävää tulevaisuutta yhdistämällä teknisen osaamisen, 
+                        tekoälyavusteisen suunnittelun ja vastuullisen liiketoiminnan.
+                    </p>
+                    <div>
+                        <a href="https://www.linkedin.com/in/miika-berg" class="btn btn-primary" target="_blank">LinkedIn</a>
+                        <a href="mailto:miika.berg@gmail.com" class="btn btn-secondary">Email Me</a>
+                        <a href="Miika_Berg_CV.pdf" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;" download>Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="profile.jpg" alt="Miika Berg, Senior Design Engineer at Teleste">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Years</div>
+                    <div class="stat-description">@ Teleste | RF & Electronics</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1.8G</div>
+                    <div class="stat-label">DOCSIS 4.0</div>
+                    <div class="stat-description">World's First 1.8 GHz ICON Amplifiers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Master's</div>
+                    <div class="stat-description">MEng Innovation + MBA Sustainability</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Roles</div>
+                    <div class="stat-description">Engineer × Shop Steward × Chairman</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-title">/// EXPERIENCE</div>
+            <h2 class="section-heading">Työhistoria</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">November 2005 — Present</div>
+                    <h3 class="timeline-title">Senior Design Engineer</h3>
+                    <div class="timeline-company">Teleste</div>
+                    <p class="timeline-company">
+                        RF- ja elektroniikkasuunnittelu, fokuksena ICON-tuoteperhe mukaan lukien 
+                        DOCSIS 4.0 ja 1.8 GHz -ratkaisut. Vastuualueena valmistettavuus, testattavuus, 
+                        tuotannon tuki, telemetria-ominaisuudet ja AI-avusteinen tuotekehitys 
+                        (Microsoft Copilot, agenttipohjainen työnkulku).
+                    </p>
+                    <div class="tags">
+                        <span class="tag">DOCSIS 4.0</span>
+                        <span class="tag">1.8 GHz ICON</span>
+                        <span class="tag">RF Design</span>
+                        <span class="tag">Manufacturability</span>
+                        <span class="tag">AI-Driven Development</span>
+                        <span class="tag">Microsoft Copilot</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2019 — Present</div>
+                    <h3 class="timeline-title">Shop Steward</h3>
+                    <div class="timeline-company">Teleste Network Oy & Teleste Oyj</div>
+                    <p class="timeline-company">
+                        Ylempien toimihenkilöiden luottamushenkilö. TES-, palkka- ja 
+                        organisaatiomuutosneuvottelut, henkilöstökehitys- ja koulutussuunnitelmat, 
+                        tasa-arvo- ja monimuotoisuustyöryhmä (ikäjohtamisen mallit), 
+                        henkilöstöpulssianalyysit ja toimenpide-ehdotukset.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Labor Relations</span>
+                        <span class="tag">CBA Negotiations</span>
+                        <span class="tag">DEI</span>
+                        <span class="tag">Age Management</span>
+                        <span class="tag">Staff Development</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2024 — Present</div>
+                    <h3 class="timeline-title">Chairman of the Board</h3>
+                    <div class="timeline-company">Otso3 Oy</div>
+                    <p class="timeline-company">
+                        Innovaation kaupallistaminen lutikkatorjuntaan. Patenttiprosessin 
+                        koordinointi, IPR-kumppanisuhteet, rahoitus, kumppanuudet ja 
+                        toimitusketjun kehittäminen. Ekologinen liiketoimintakehitys.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Innovation</span>
+                        <span class="tag">Patents & IPR</span>
+                        <span class="tag">Funding</span>
+                        <span class="tag">Sustainable Business</span>
+                        <span class="tag">Supply Chain</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">November 2020 — Present</div>
+                    <h3 class="timeline-title">Floorball Referee & Coach</h3>
+                    <div class="timeline-company">Salibandyliitto | Volunteer</div>
+                    <p class="timeline-company">
+                        Salibandytuomari sekä kehitysvammaisten ja erityistarpeisten 
+                        pelaajien joukkueen valmentaja. Vapaaehtoistyö antaa perspektiiviä, 
+                        resilenssiä ja merkityksellisyyden tunnetta mahdollistamalla muiden menestys.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Coaching</span>
+                        <span class="tag">Inclusion</span>
+                        <span class="tag">Leadership</span>
+                        <span class="tag">Volunteering</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-title">/// EDUCATION</div>
+            <h2 class="section-heading">Koulutus & Jatkuva Kehitys</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">September 2025 — December 2027</div>
+                    <h3 class="timeline-title">Master of Business Administration (MBA)</h3>
+                    <div class="timeline-company">Savonia University of Applied Sciences</div>
+                    <p class="timeline-company">
+                        Kestävän tulevaisuuden MBA-ohjelma. Fokuksena yritysvastuu ja 
+                        kestävä liiketoimintakehitys.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Sustainability</span>
+                        <span class="tag">Corporate Responsibility</span>
+                        <span class="tag">Business Development</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">January 2024 — June 2026</div>
+                    <h3 class="timeline-title">Master of Engineering (MEng)</h3>
+                    <div class="timeline-company">Savonia University of Applied Sciences</div>
+                    <p class="timeline-company">
+                        Innovaatioasiantuntijuuden maisteriohjelma. Fokuksena innovaatioprosessit, 
+                        monitieteinen yhteistyö ja yrittäjyys.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Innovation Processes</span>
+                        <span class="tag">Interdisciplinary Collaboration</span>
+                        <span class="tag">Entrepreneurship</span>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">August 2001 — June 2006</div>
+                    <h3 class="timeline-title">Bachelor of Engineering (BE)</h3>
+                    <div class="timeline-company">Turku University of Applied Sciences</div>
+                    <p class="timeline-company">
+                        Sähkö- ja elektroniikkatekniikka. Perusta RF-suunnittelulle ja 
+                        tuotekehitykselle.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Electrical Engineering</span>
+                        <span class="tag">Electronics</span>
+                        <span class="tag">RF Technology</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">/// PROJECTS</div>
+            <h2 class="section-heading">Projektit & Osaaminen</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3 class="project-title">DOCSIS 4.0 / 1.8 GHz ICON Amplifiers</h3>
+                    <p class="description">
+                        Maailman ensimmäiset DOCSIS 4.0 -yhteensopivat 1.8 GHz ICON smart -vahvistimet 
+                        osana GoWest-strategiaa toteuttavaa tiimiä. Valmistettavuus, testattavuus, 
+                        telemetria ja AI-avusteinen tuotekehitys.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">DOCSIS 4.0</span>
+                        <span class="tag">1.8 GHz</span>
+                        <span class="tag">RF Design</span>
+                        <span class="tag">Innovation</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">AI-Driven Product Development</h3>
+                    <p class="description">
+                        Pioneeri AI-pohjaisten ratkaisujen implementoinnissa tuotekehityksessä. 
+                        Microsoft Copilot ja agenttipohjainen työnkulku suunnittelun tehostamisessa, 
+                        dokumentoinnissa ja päätöksenteossa.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Microsoft Copilot</span>
+                        <span class="tag">AI Agents</span>
+                        <span class="tag">Workflow Automation</span>
+                        <span class="tag">Innovation</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">Otso3 Oy - Bedbug Control Innovation</h3>
+                    <p class="description">
+                        Innovaation kaupallistaminen lutikkatorjuntaan. Patenttiprosessi, 
+                        rahoituksen hankkiminen, ekologinen liiketoimintakehitys ja 
+                        toimitusketjun rakentaminen.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Patents</span>
+                        <span class="tag">Funding</span>
+                        <span class="tag">Sustainable Business</span>
+                        <span class="tag">Chairman</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3 class="project-title">DEI & Age Management</h3>
+                    <p class="description">
+                        Tasa-arvo- ja monimuotoisuustyöryhmä, ikäjohtamisen mallien kehitys, 
+                        henkilöstöpulssianalyysit ja työhyvinvointi. Vastuullinen johtaminen 
+                        joka tukee yksilön ja tiimin kasvua.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">DEI</span>
+                        <span class="tag">Age Management</span>
+                        <span class="tag">Well-being</span>
+                        <span class="tag">Leadership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section id="philosophy">
+        <div class="container">
+            <div class="section-title">/// PHILOSOPHY</div>
+            <h2 class="section-heading">Arvot & Periaatteet</h2>
+            
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <h3>Well-being First</h3>
+                    <p>
+                        Hyvinvointi ei ole sivutuote vaan edellytys onnistuneelle työlle. 
+                        Kun ihmiset voivat hyvin, innovaatiot syntyvät ja ongelmat ratkeavat.
+                    </p>
+                    <div class="philosophy-quote">
+                        "Take care of your employees and they'll take care of your business."
+                        <br>— Richard Branson
+                    </div>
+                </div>
+
+                <div class="philosophy-item">
+                    <h3>Sustainable Operations</h3>
+                    <p>
+                        Kestävyys ei ole vaihtoehto vaan välttämättömyys. Rakennan tuotteita ja 
+                        liiketoimintamalleja jotka turvaavat tulevien sukupolvien mahdollisuudet.
+                    </p>
+                    <div class="philosophy-quote">
+                        "There can be no 'Plan B' because there is no 'Planet B.'"
+                        <br>— Ban Ki-moon
+                    </div>
+                </div>
+
+                <div class="philosophy-item">
+                    <h3>Leadership Through Example</h3>
+                    <p>
+                        Paras johtajuus syntyy tekemisestä, ei puheesta. Selkeys, 
+                        datavetoinen päätöksenteko ja vastuunotto ohjaavat toimintaani.
+                    </p>
+                    <div class="philosophy-quote">
+                        "What you do has far greater impact than what you say."
+                        <br>— Stephen R. Covey
+                    </div>
+                </div>
+
+                <div class="philosophy-item">
+                    <h3>Innovation × Technology × Humanity</h3>
+                    <p>
+                        Parhaat ratkaisut syntyvät kun tekninen osaaminen, innovatiivinen ajattelu 
+                        ja inhimillisyys kohtaavat. Pioneeri AI:n hyödyntämisessä, mutta aina 
+                        ihmisen ehdoilla.
+                    </p>
+                    <div class="philosophy-quote">
+                        "Technology proposes itself as the architect of our intimacies."
+                        <br>— Sherry Turkle
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">/// SKILLS</div>
+            <h2 class="section-heading">Tekninen Osaaminen</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Core Engineering</h3>
+                    <div class="skill-item">RF Circuit Design (1.8 GHz)</div>
+                    <div class="skill-item">DOCSIS 4.0 Technology</div>
+                    <div class="skill-item">Electronics Design</div>
+                    <div class="skill-item">Product Development</div>
+                    <div class="skill-item">Manufacturability</div>
+                    <div class="skill-item">Testability & Telemetry</div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Innovation & AI</h3>
+                    <div class="skill-item">AI-Driven Development</div>
+                    <div class="skill-item">Microsoft Copilot</div>
+                    <div class="skill-item">Agent-Based Workflows</div>
+                    <div class="skill-item">Innovation Processes</div>
+                    <div class="skill-item">Design Thinking</div>
+                    <div class="skill-item">Patenting</div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Leadership & People</h3>
+                    <div class="skill-item">DEI (Diversity, Equality, Inclusion)</div>
+                    <div class="skill-item">Labor Relations</div>
+                    <div class="skill-item">Conflict Resolution</div>
+                    <div class="skill-item">Team Leadership</div>
+                    <div class="skill-item">Coaching</div>
+                    <div class="skill-item">Age Management</div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Business & Sustainability</h3>
+                    <div class="skill-item">Sustainable Business Development</div>
+                    <div class="skill-item">Corporate Responsibility</div>
+                    <div class="skill-item">Entrepreneurship</div>
+                    <div class="skill-item">Supply Chain Development</div>
+                    <div class="skill-item">Funding & Partnerships</div>
+                    <div class="skill-item">Board Leadership</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div>
+                <p>© 2026 Miika Berg</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Innovation × Sustainability × Leadership</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                    <a href="/cdn-cgi/l/email-protection#3c515555575d125e594e5b7c5b515d5550125f5351" style="color: var(--accent-orange); text-decoration: none;"><span class="__cf_email__" data-cfemail="0e636767656f206c6b7c694e69636f6762206d6163">[email&#160;protected]</span></a>
+                </p>
+            </div>
+            <div style="text-align: right;">
+                <p>Senior Design Engineer @ Teleste</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">Chairman @ Otso3 | MEng & MBA Student</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+        
+        function closeMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.remove('active');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+       
