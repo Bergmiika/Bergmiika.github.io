@@ -212,6 +212,7 @@
 
         section {
             padding: 6rem 0;
+            scroll-margin-top: 80px;
         }
 
         .section-title {
@@ -504,7 +505,7 @@
                     </p>
                     <div>
                         <a href="https://www.linkedin.com/in/miika-berg" class="btn btn-primary" target="_blank">LinkedIn</a>
-                        <a href="mailto:miika.berg@gmail.com" class="btn btn-secondary">Email Me</a>
+                        <a href="/cdn-cgi/l/email-protection#98f5f1f1f3f9b6fafdeaffd8fff5f9f1f4b6fbf7f5" class="btn btn-secondary">Email Me</a>
                         <a href="Miika_Berg_CV.pdf" class="btn btn-secondary" style="margin-top: 1rem; display: inline-block;" download>Download CV</a>
                     </div>
                 </div>
@@ -690,6 +691,27 @@
             
             <div class="projects-grid">
                 <div class="project-card">
+                    <h3 class="project-title">AI-Powered Portfolio Development</h3>
+                    <p class="description">
+                        Meta-projekti: Rakensin tämän portfolio-sivun käyttäen Claude AI:ta osana 
+                        MEng Innovation Expertise -opintojani. Tavoitteena tutkia miten generatiivinen 
+                        tekoäly voi auttaa sisällöntuotannossa ja henkilöbrändäyksessä. 
+                        Aika ideasta julkaisuun: ~2 tuntia.
+                    </p>
+                    <div class="tags">
+                        <span class="tag">Claude AI</span>
+                        <span class="tag">Innovation</span>
+                        <span class="tag">Meta-Learning</span>
+                        <span class="tag">HTML/CSS/JS</span>
+                    </div>
+                    <p style="margin-top: 1rem;">
+                        <a href="https://github.com/miikaberg/miikaberg.github.io" target="_blank" style="color: var(--accent-orange); text-decoration: none; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem;">
+                            → View on GitHub
+                        </a>
+                    </p>
+                </div>
+
+                <div class="project-card">
                     <h3 class="project-title">DOCSIS 4.0 / 1.8 GHz ICON Amplifiers</h3>
                     <p class="description">
                         Maailman ensimmäiset DOCSIS 4.0 -yhteensopivat 1.8 GHz ICON smart -vahvistimet 
@@ -868,7 +890,7 @@
                 <p>© 2026 Miika Berg</p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem;">Innovation × Sustainability × Leadership</p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem;">
-                    <a href="/cdn-cgi/l/email-protection#3c515555575d125e594e5b7c5b515d5550125f5351" style="color: var(--accent-orange); text-decoration: none;"><span class="__cf_email__" data-cfemail="0e636767656f206c6b7c694e69636f6762206d6163">[email&#160;protected]</span></a>
+                    <a href="mailto:miika.berg@gmail.com" style="color: var(--accent-orange); text-decoration: none;">miika.berg@gmail.com</a>
                 </p>
             </div>
             <div style="text-align: right;">
@@ -878,7 +900,7 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function toggleMenu() {
             const menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
@@ -892,4 +914,14 @@
         // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.querySelector('nav');
-       
+            const menu = document.getElementById('nav-menu');
+            const toggle = document.querySelector('.menu-toggle');
+            
+            if (!nav.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
