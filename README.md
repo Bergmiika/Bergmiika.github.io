@@ -261,7 +261,7 @@ MEng & MBA Student
 **Connect:**
 - LinkedIn: [linkedin.com/in/miika-berg](https://linkedin.com/in/miika-berg)
 - Email: miika.berg@gmail.com
-- Portfolio: [miikaberg.github.io](https://miikaberg.github.io)
+- Portfolio: [miikaberg.github.io](https://bergmiika.github.io)
 
 ---
 
