@@ -2,7 +2,7 @@
 
 > **Meta-project:** A portfolio website built with AI to explore how generative AI can assist in content creation and personal branding.
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://miikaberg.github.io)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=for-the-badge)](https://bergmiika.github.io)
 [![Built with Claude](https://img.shields.io/badge/built%20with-Claude%20AI-orange?style=for-the-badge)](https://claude.ai)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
@@ -149,15 +149,15 @@ miikaberg.github.io/
 ## 🚀 Quick Start
 
 ### View Live
-👉 **https://miikaberg.github.io**
+👉 **https://bergmiika.github.io**
 
 ### Run Locally
 ```bash
 # Clone the repo
-git clone https://github.com/miikaberg/miikaberg.github.io.git
+git clone https://github.com/miikaberg/bergmiika.github.io.git
 
 # Open in browser
-cd miikaberg.github.io
+cd bergmiika.github.io
 open index.html  # macOS
 start index.html # Windows
 xdg-open index.html # Linux
